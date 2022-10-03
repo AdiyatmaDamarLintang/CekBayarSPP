@@ -1,0 +1,148 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+import java.util.Scanner;
+
+/**
+ *
+ * @author LENOVO
+ */
+public class Wekwek {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int absen, tagihan = 0, pembayaran, kembalian, uang;
+        String nama = null, cekbayartagihan, ceklagi;
+
+        do {
+            System.out.println("*Cek tagihan XR9*");
+            System.out.println("Pembayaran dapat dilakukan dengan transfer");
+            System.out.print("Masukkan Absen anda: ");
+            absen = input.nextInt();
+
+            switch (absen) {
+                case 1:
+                    nama = "Lalisa Park";
+                    tagihan = 600000;
+                    break;
+                case 2:
+                    nama = "Tiffani Young";
+                    tagihan = 700000;
+                    break;
+                case 3:
+                    nama = "Muhammad Ramdhan Rusdi";
+                    tagihan = 900000;
+                    break;
+                case 4:
+                    nama = "Jay Park Unch";
+                    tagihan = 300000;
+                    break;
+                case 5:
+                    nama = "Isyana Ratu Dewi";
+                    tagihan = 40000;
+                    break;
+                case 6:
+                    nama = "Elsi Suprapto";
+                    tagihan = 0;
+                    break;
+                case 7:
+                    nama = "Kesha Poarch";
+                    tagihan = 0;
+                    break;
+                case 8:
+                    nama = "Lady Charlotte";
+                    tagihan = 1000000;
+                    break;
+                case 9:
+                    nama = "Melanie Melaz";
+                    tagihan = 300000;
+                    break;
+                case 10:
+                    nama = "Adele Swift";
+                    tagihan = 600000;
+                    break;
+                case 11:
+                    nama = "Doja Monkey";
+                    tagihan = 70000;
+                    break;
+                case 12:
+                    nama = "Madison Mango";
+                    tagihan = 60000;
+                    break;
+                case 13:
+                    nama = "Halsey Yumna Khoirul";
+                    tagihan = 0;
+                    break;
+                case 14:
+                    nama = "Tiga Lipa";
+                    tagihan = 0;
+                    break;
+                case 15:
+                    nama = "Harry Masketeer";
+                    tagihan = 50000;
+                    break;
+                default:
+                    System.out.println("Maaf absen tersebut tidak terdata dalam kelas kami");
+            }
+            System.out.println("Nama anda " + nama);
+            System.out.println("Tagihan anda sebesar " + tagihan);
+
+            if (tagihan == 0) {
+                System.out.println("Terima kasih sudah bekerja dengan kami");
+            } else if (tagihan > 0) {
+                System.out.print("Apakah anda ingin membayar tagihan anda? (ya/tidak): ");
+                cekbayartagihan = input.next();
+                if (cekbayartagihan.equals("ya")) {
+                    System.out.println();
+                    System.out.println("Pilihan cara pembayaran");
+                    String carapembayaran[] = {"1. Bank Jatim", "2. Bank BCA", "3. Bank BNI", "4. Bank BRI", "5. Bank Jago"};
+                    for (int index = 0; index < carapembayaran.length; index++) {
+                        System.out.println(carapembayaran[index]);
+                    }
+                    System.out.print("Pilih cara pembayaran: ");
+                    pembayaran = input.nextInt();
+                    System.out.println();
+                    switch (pembayaran) {
+                        case 1:
+                            System.out.println("BANK JATIM");
+                            break;
+                        case 2:
+                            System.out.println("BANK BCA");
+                            break;
+                        case 3:
+                            System.out.println("BANK BNI");
+                            break;
+                        case 4:
+                            System.out.println("BANK BRI");
+                            break;
+                        case 5:
+                            System.out.println("BANK JAGO");
+                            break;
+                        default:
+                            System.out.println("Maaf kami belum menerima pilihan bank tersebut");
+                    }
+                    System.out.print("Masukkan nominal uang anda: ");
+                    uang = input.nextInt();
+
+                    if (uang > tagihan) {
+                        kembalian = uang - tagihan;
+                        System.out.println("Kembalian anda sebesar: " + kembalian);
+                        System.out.println("Terima kasih telah bekerja dengan kami");
+                    } else if (uang < tagihan) {
+                        System.out.println("Maaf uang anda kurang");
+                        System.out.println("Terima kasih telah bekerja dengan kami");
+                    } else if (uang == tagihan) {
+                        System.out.println("Terima kasih telah bekerja dengan kami");
+                    }
+                } else if (cekbayartagihan.equals("tidak")) {
+                    System.out.println("Baik terima kasih");
+                }
+            }
+            System.out.println("");
+            System.out.print("Apakah anda ingin mengecek tagihan anda lagi? (ya/tidak): ");
+            ceklagi = input.next();
+        } while (ceklagi.equals("ya"));
+    }
+}
